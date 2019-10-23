@@ -2,7 +2,7 @@
 """
 Created on Sun May 19 11:44:36 2019
 
-@author: Katie
+@author: Leke 
 """
 
 from selenium import webdriver
@@ -107,8 +107,8 @@ class AccountScraper():
     
     
     
-username = input("le__x__ie")
-password = input("Leke039.") 
+username = input("")
+password = input("") 
 pagename = input("Enter the IG page name\n")     
 instagram = AccountScraper(username,password,pagename)
 Login = instagram.login()
