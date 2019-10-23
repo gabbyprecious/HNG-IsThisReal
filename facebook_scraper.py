@@ -27,13 +27,13 @@ driver.get("http://www.facebook.com")
 time.sleep(5) 
 # Login to Facebook
 
-driver.find_element_by_id("email").send_keys("lexmill99@gmail.com")
-driver.find_element_by_id("pass").send_keys("lekeariyo2015")
+driver.find_element_by_id("email").send_keys("yourmail")
+driver.find_element_by_id("pass").send_keys("yourpassword")
 driver.find_element_by_id("loginbutton").click();
  
 # Waiting time 
 time.sleep(5)
-driver.get('https://www.facebook.com/search/posts/?q=%22'+'Appzone Developer'+'%22&epa=SERP_TAB')
+driver.get('https://www.facebook.com/search/posts/?q=%22'+'Search Term'+'%22&epa=SERP_TAB')
 """content = 
 for lek in content:
     leky = lek.get_attribute("href")
