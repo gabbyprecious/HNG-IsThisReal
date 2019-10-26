@@ -3,8 +3,7 @@ from gingerit.gingerit import GingerIt
 import requests
 from bs4 import BeautifulSoup
 from textblob import TextBlob
-import urllib3
-from grammarbot import GrammarBotClient
+import urllib
 from nltk.corpus import stopwords #download by python -m nltk.downloader stopwords in the cmd
 nlp = en_core_web_sm.load()
 
@@ -43,20 +42,16 @@ def add_to_word_list(strings):
 
 
 def check(mail):
-    tokens = nlp(mail)
-    count = 0
-    for sent in tokens.sents:
-        x = sent.string.strip()
-        #print(x)
-        client = GrammarBotClient()
-        res = client.check(x, 'en-GB')
-        if len(res.matches) > 0:
-            #print(res.matches)
-            count += 1
-    if count > 5:
-        return 0
-    else:
-        return 1
+     try:
+        f = word(mail, 'sentence')
+        corrections = 0
+        for s in f:
+            g = GingerIt()
+            h = g.parse(s)
+            corrections += len(h['corrections'])
+        return corrections
+    except:
+        print("Error while checking grammer errors in text")
 
 
 
@@ -133,7 +128,7 @@ def analysis(text):
 #        elif negative >= 30:
 #            n = 0
 #            
-#        if correction < 1 :
+#        if corrections > 4 :
 #            c = 0
 #        else:
 #            c = 1
