@@ -1,11 +1,11 @@
 import nltk #download the tokenizer english by python -m nltk.downloader punkt in the cmdimport spacy
-from gingerit.gingerit import GingerIt
 import requests
 from bs4 import BeautifulSoup
 from textblob import TextBlob
 import urllib
+from gingerit.gingerit import GingerIt
 from nltk.corpus import stopwords #download by python -m nltk.downloader stopwords in the cmd
-
+stop_words = stopwords.words("english") 
 
 def percentage(part, whole): # calculate percentage
     if whole != 0:
@@ -42,17 +42,28 @@ def add_to_word_list(strings):
 
 
 def check(mail):
-     try:
-        f = word(mail, 'sentence')
-        corrections = 0
-        for s in f:
-            g = GingerIt()
-            h = g.parse(s)
-            corrections += len(h['corrections'])
-        return corrections
-    except:
-        print("Error while checking grammer errors in text")
+    f = word(mail, 'sentence')
+    corrections = 0
+    for s in f:
+        g = GingerIt()
+        h = g.parse(s)
+        corrections += len(h['corrections'])
+    return corrections
 
+
+def word(mail, final_type): # function to tokenize text 
+        tok_sent = nltk.sent_tokenize(mail)
+        tok_word = []
+        for s in tok_sent:
+            tok_word.append(nltk.word_tokenize(s))
+        final_text = []
+        for w in tok_word:
+            if w not in stop_words:
+                final_text.append(w)
+        if final_type == 'sentence':
+            return tok_sent
+        elif final_type == 'word':
+            return final_text
 
 
 def search(search_term, next=False, page=0,  board=0):
@@ -71,7 +82,7 @@ def search(search_term, next=False, page=0,  board=0):
 
 
 WordList = []
-def analysis(text):
+def analysis(comp):
     """function to evaluate sentiment"""
     try:
         j = 0
@@ -81,7 +92,7 @@ def analysis(text):
                 nextItem = False
             else:
                 nextItem = True
-            commentsCurrent = search(text, nextItem, j,  board)
+            commentsCurrent = search(comp, nextItem, j,  board)
             add_to_word_list(commentsCurrent)
             j += 1
     except:
