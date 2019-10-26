@@ -1,0 +1,35 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Oct 26 01:54:03 2019
+
+@author: PRECIOUS
+"""
+
+body {
+    font-family: Garamond;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+   border: 2px blue;
+}
+
+input[type=text]:focus {
+  border: 3px solid green;
+}
+
+input[type=submit]{
+  background-color: green;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+div {
+   padding-down: 50px;}
