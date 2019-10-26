@@ -8,5 +8,4 @@ urllib3
 nltk
 requests
 pandas
-en_core_web_sm
 grammarbot
