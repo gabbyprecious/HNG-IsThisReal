@@ -1,3 +1,4 @@
+#Importing necessary libraries
 import time
 import random
 from selenium import webdriver
