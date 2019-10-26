@@ -1,9 +1,9 @@
 import nltk #download the tokenizer english by python -m nltk.downloader punkt in the cmdimport spacy
-import en_core_web_sm #install by python -m spacy download en'
+from gingerit.gingerit import GingerIt
 import requests
 from bs4 import BeautifulSoup
 from textblob import TextBlob
-import urllib
+import urllib3
 from grammarbot import GrammarBotClient
 from nltk.corpus import stopwords #download by python -m nltk.downloader stopwords in the cmd
 nlp = en_core_web_sm.load()
