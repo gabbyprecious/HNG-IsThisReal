@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>ML API</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+</head>
+
+<body>
+    <div class="cal">
+        <h1>Predict Salary Analysis</h1>
+
+        <!-- Main Input For Receiving Query to our ML -->
+        <form method="POST">
+            <input type="text" name="mail" placeholder="Copy and paste Email" required/>
+            <input type="text" name="votes" placeholder="Does company exists on CAC?" required/>
+            <input type="text" name="comp" placeholder="Name of Company" required/>
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+ 
+ 
+ {% if report %}
+ <p>{{report}}</p>
+ {% endif %}
+    </div>
+<div id ="Use">
+   <h2><strong>HOW TO USE ISTHISREAL</strong></h2>
+   <p> 1. Input name of email that was sent. </p>
+   <p> 2. Go to <a href= "http://publicsearch.cac.gov.ng/ComSearch/">CAC</a> Type a "yes" or "no".</p>
+   <p> 3. Type name of company.</p>
+   <p> 4. Submit and leave to us.</p>
+</div>
+</body>
+
+</html>
