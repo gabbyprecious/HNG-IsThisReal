@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 from textblob import TextBlob
 import urllib
 from nltk.corpus import stopwords #download by python -m nltk.downloader stopwords in the cmd
-nlp = en_core_web_sm.load()
+
 
 def percentage(part, whole): # calculate percentage
     if whole != 0:
