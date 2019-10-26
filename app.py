@@ -32,7 +32,7 @@ def confidence_check(mail, comp, votes):
                 n = 5
         elif negative >= 30:
             n = 0
-        if correction < 1 :
+        if correction > 4 :
             c = 0
         else:
             c = 1
