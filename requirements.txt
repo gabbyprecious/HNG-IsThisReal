@@ -3,11 +3,10 @@ matplotlib
 textblob
 flask
 gunicorn
-pytesseract
-gingerit
 spacy
-pillow
+urllib
 nltk
 requests
-googlemaps
 pandas
+en_core_web_sm
+grammarbot
