@@ -9,3 +9,4 @@ nltk
 requests
 pandas
 grammarbot
+gingerit
